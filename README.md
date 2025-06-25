@@ -4,6 +4,7 @@ Create sensors in Home Assistant from data derived from the IT Watchdogs Weather
 The IT Watchdogs Weathergoose (WxGoos) helpfully outputs all it's sensor values in an XML file. This YAML code will enable Home Assistant to scrape the Weathergoose XML and create sensors.
 
 Step 1: Add this line to configuration.yaml
+
 rest: !include rest.yaml
 
 Step 2: Create rest.yaml file 
