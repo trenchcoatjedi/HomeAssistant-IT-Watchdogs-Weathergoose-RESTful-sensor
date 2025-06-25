@@ -1,0 +1,30 @@
+scan_interval: 20 #Number of seconds between Home Assistant scraping the XML file
+resource: "http://ip.address/data.xml" #Replace ip.address with the ip address or domain name of the Weathergoose 
+sensor:
+ - name: "Temperature Sensor °C"
+   unique_id: "Weathergoose Temperature"
+   state_class: measurement
+   unit_of_measurement: "°C"
+   value_template: "{{ value_json.server.devices.device.field[0]['@value'] }}"
+ - name: "Temperature Sensor °F"
+   unique_id: "Weathergoose Temperature"
+   state_class: measurement
+   unit_of_measurement: "°F"
+   value_template: "{{ value_json.server.devices.device.field[1]['@value'] }}"
+ - name: "Humidity Sensor"
+   unique_id: "Weathergoose Humidity"
+   state_class: measurement
+   unit_of_measurement: "%"
+   value_template: "{{ value_json.server.devices.device.field[2]['@value'] }}"
+ - name: "Airflow Sensor"
+   unique_id: "Weathergoose Air Flow"
+   state_class: measurement
+   value_template: "{{ value_json.server.devices.device.field[3]['@value'] }}"
+ - name: "Light Sensor"
+   unique_id: "Weathergoose Light Sensor"
+   state_class: measurement
+   value_template: "{{ value_json.server.devices.device.field[4]['@value'] }}"
+- name: "Noise Sensor"
+   unique_id: "Weathergoose Noise Sensor"
+   state_class: measurement
+   value_template: "{{ value_json.server.devices.device.field[5]['@value'] }}"
