@@ -28,3 +28,16 @@ sensor:
    unique_id: "Weathergoose Noise Sensor"
    state_class: measurement
    value_template: "{{ value_json.server.devices.device.field[5]['@value'] }}"
+#The WxGoos-1 has three additional sensors with default labels of IO-1 through IO-3 which are user configurable. Uncomment the following lines if any additional sensors are setup
+#- name: "Optional Sensor 1"
+#   unique_id: "Weathergoose Optional Sensor 1"
+#   state_class: measurement
+#   value_template: "{{ value_json.server.devices.device.field[6]['@value'] }}"
+#- name: "Optional Sensor 2"
+#   unique_id: "Weathergoose Optional Sensor 2"
+#   state_class: measurement
+#   value_template: "{{ value_json.server.devices.device.field[7]['@value'] }}"
+#- name: "Optional Sensor 3"
+#   unique_id: "Weathergoose Optional Sensor 3"
+#   state_class: measurement
+#   value_template: "{{ value_json.server.devices.device.field[8]['@value'] }}"
