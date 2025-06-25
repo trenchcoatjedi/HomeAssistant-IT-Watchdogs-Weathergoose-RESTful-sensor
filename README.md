@@ -7,10 +7,8 @@ Step 1: Add the following line to configuration.yaml
 
 >rest: !include rest.yaml
 
-Step 2: Create rest.yaml file 
+Step 2: Create rest.yaml file from provided template
 
-Step 3: Copy contents of rest.yaml to Home Assistant
+Step 3: Update the resource to the Weathergoose IP address. Optionally change the scan_interval number.
 
-Step 4: Update the resource to the Weathergoose IP address. Optionally change the scan_interval number.
-
-Step 5: Restart Home Assistant (full restart; Quick Reload will not work)
+Step 4: Restart Home Assistant (full restart; Quick Reload will not work)
