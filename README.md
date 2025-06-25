@@ -5,7 +5,7 @@ The IT Watchdogs Weathergoose (WxGoos) helpfully outputs all it's sensor values 
 
 Step 1: Add this line to configuration.yaml
 
-rest: !include rest.yaml
+>rest: !include rest.yaml
 
 Step 2: Create rest.yaml file 
 
