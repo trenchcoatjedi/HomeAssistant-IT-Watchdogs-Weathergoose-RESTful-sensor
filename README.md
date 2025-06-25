@@ -1,4 +1,4 @@
-# HomeAssistant-IT-Watchdogs-Weathergoose-RESTful-sensor
+# IT-Watchdogs Weathergoose RESTful Sensor for Home Assistant 
 Integrate IT Watchdogs Weathergoose (WxGoos) sensor data into Home Assistant
 
 The IT Watchdogs Weathergoose (WxGoos) helpfully outputs all it's sensor values in an XML file. This YAML code will enable Home Assistant to scrape the Weathergoose XML and create sensors.
