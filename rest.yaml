@@ -5,39 +5,39 @@ sensor:
    unique_id: "Weathergoose Temperature"
    state_class: measurement
    unit_of_measurement: "°C"
-   value_template: "{{ value_json.server.devices.device.field[0]['@value'] }}"
+   value_template: "{{ (value_json['server']['devices']['device']['field']|selectattr('@key','eq','TempC')|first)['@value'] }}" 
  - name: "Temperature Sensor °F"
    unique_id: "Weathergoose Temperature"
    state_class: measurement
    unit_of_measurement: "°F"
-   value_template: "{{ value_json.server.devices.device.field[1]['@value'] }}"
+   value_template: "{{ (value_json['server']['devices']['device']['field']|selectattr('@key','eq','TempF')|first)['@value'] }}" 
  - name: "Humidity Sensor"
    unique_id: "Weathergoose Humidity"
    state_class: measurement
    unit_of_measurement: "%"
-   value_template: "{{ value_json.server.devices.device.field[2]['@value'] }}"
+   value_template: "{{ (value_json['server']['devices']['device']['field']|selectattr('@key','eq','Humidity')|first)['@value'] }}" 
  - name: "Airflow Sensor"
    unique_id: "Weathergoose Air Flow"
    state_class: measurement
-   value_template: "{{ value_json.server.devices.device.field[3]['@value'] }}"
+   value_template: "{{ (value_json['server']['devices']['device']['field']|selectattr('@key','eq','Airflow')|first)['@value'] }}" 
  - name: "Light Sensor"
    unique_id: "Weathergoose Light Sensor"
    state_class: measurement
-   value_template: "{{ value_json.server.devices.device.field[4]['@value'] }}"
+   value_template: "{{ (value_json['server']['devices']['device']['field']|selectattr('@key','eq','Light')|first)['@value'] }}" 
 - name: "Noise Sensor"
    unique_id: "Weathergoose Noise Sensor"
    state_class: measurement
-   value_template: "{{ value_json.server.devices.device.field[5]['@value'] }}"
+   value_template: "{{ (value_json['server']['devices']['device']['field']|selectattr('@key','eq','Sound')|first)['@value'] }}" 
 #The WxGoos-1 has three additional sensors with default labels of IO-1 through IO-3 which are user configurable. Uncomment the following lines if any additional sensors are setup
 #- name: "Optional Sensor 1"
 #   unique_id: "Weathergoose Optional Sensor 1"
 #   state_class: measurement
-#   value_template: "{{ value_json.server.devices.device.field[6]['@value'] }}"
+#   value_template: "{{ (value_json['server']['devices']['device']['field']|selectattr('@key','eq','IO1')|first)['@value'] }}" 
 #- name: "Optional Sensor 2"
 #   unique_id: "Weathergoose Optional Sensor 2"
 #   state_class: measurement
-#   value_template: "{{ value_json.server.devices.device.field[7]['@value'] }}"
+#   value_template: "{{ (value_json['server']['devices']['device']['field']|selectattr('@key','eq','IO2')|first)['@value'] }}" 
 #- name: "Optional Sensor 3"
 #   unique_id: "Weathergoose Optional Sensor 3"
 #   state_class: measurement
-#   value_template: "{{ value_json.server.devices.device.field[8]['@value'] }}"
+#   value_template: "{{ (value_json['server']['devices']['device']['field']|selectattr('@key','eq','IO3')|first)['@value'] }}" 
